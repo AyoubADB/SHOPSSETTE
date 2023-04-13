@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHAUSSETTE CONFORT</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/main2.css">
+    <link rel="icon" href="image/logo/SHOPSSETTE.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+</head>
+<body background="image/fond/fond-finale3.jpg">
+
+    <section class="fond2">
+            <div style="color: beige;">
+                <h1>🤗 CONFORT 🤗</h1>
+            </div>
+    </section>
+
+    <section class="centre">
+        <div class="acceuil">
+            <p><a href="/index">ACCEUIL</a></p>
+        </div>
+        <br>
+        <div>
+            <p> SHOP TES CHAUSSETTE ici👉🏻
+                <a href="/page2">💶 Commander 💶</a>
+            </p>
+        </div>
+        <br>
+        <div class="case">
+            <p><a href="/page3">🤗 Confort 🤗</a></p> 
+            <p> <a href="/page4">🥊 Sport 🥊</a></p>  
+            <p> <a href="/page5">🕰️ Classique 🕰️</a></p>
+            <p><a href="/page6">⚽ Football ⚽ </a></p>
+        </div>
+    </section>
+
+    <ul>
+        <% for (let i = 0; i < produits.length; i++) { %>
+        <li class="sanspoint">
+          <div class="confort2">
+            <div class="h4">
+                <img src="/image/confort/<%=produits[i].nom%>.png" class="imagepage3">
+                <h3><%= produits[i].nom %></h3>
+                <p><%= produits[i].prix %></p> 
+                <div>
+                    <form action="/cart" method="post">
+                        <input type="hidden" name="idproduits" value="<%= produits[i].id %>" />
+                        <a href="/page2">💶 Commander 💶</a>
+                        <!-- <input type="submit" value="💶 Commander 💶" class="commander"/> -->
+                    </form>
+                </div>                     
+            </div>
+          </div>
+        </li>
+        <% } %>
+      </ul>
+
+    <br>
+    <br>
+
+</body>
+</html>
